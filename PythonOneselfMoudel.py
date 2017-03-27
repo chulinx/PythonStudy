@@ -72,10 +72,28 @@ from ConfigParser import ConfigParser
 #         print 'ssh '+ip+':'+value
 
 # 打印所有key：value
-conf = ConfigParser()
-conf.read('conf.ini')
-section = conf.sections()
-for section in section:
-    option = conf.options(section)
-    for option in option:
-        print option + ':' + conf.get(section, option)
+# conf = ConfigParser()
+# conf.read('conf.ini')
+# section = conf.sections()
+# for section in section:
+#     option = conf.options(section)
+#     for option in option:
+#         print option + ':' + conf.get(section, option)
+
+#更新value
+# conf = ConfigParser()
+# conf.read('conf.ini')
+# cf = open('conf.ini', 'w')
+# conf.set('host1', 'port', value=2222)
+# conf.write(cf)
+
+#添加选项
+# conf = ConfigParser()
+# conf.read('conf.ini')
+# cf = open('conf.ini', 'w')
+# conf.add_section('host4')
+# conf.set('host4', 'host', value='192.168.22.78')
+# conf.set('host4', 'port', value=2223)
+# conf.set('host4', 'user', 'root')
+# conf.set('host4', 'pass', '12345')
+# conf.write(cf)
