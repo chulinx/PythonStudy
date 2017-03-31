@@ -1,28 +1,22 @@
-#coding:utf-8
-import urllib, urllib2, re
+# -*- coding: UTF-8 -*-
+# import urllib,urllib2
+# html = urllib.urlopen("http://www.baidu.com")
+# print html.readline()
+# print html.getcode()
+# print html.geturl()
+# import MySQLdb
+#
+#
+# conn = MySQLdb.connect(host='127.0.0.1',user='root',passwd='root')
+# cursor = conn.cursor()
+# sql = 'create database zlx;'
+# cursor.execute(sql)
+# # sql2 = 'show database'
+# # cursor.execute(sql2)
+# # for i in cursor.fetchall():
+# #     print i
 
-def spaid():
-    for i in range(1, 10):
-        url = "http://www.qiushibaike.com/8hr/page/%s/?s=4969293" % i
-        user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
-        headers = { 'User-Agent' : user_agent }
-        Request = urllib2.Request(url,headers=headers)
-        html = urllib2.urlopen(Request)
-        source = html.read()
-        return source
+import re
+import urllib, urllib2
 
-def rep(text):
-    joke = re.findall(r"<span>(.*?)<br/>(.*?)</span>", text)
-    try:
-        for i in range(0, 50):
-            print joke[i][0]+joke[i][1]+"\n"
-    except Exception as e:
-        print e
-def most(text):
-    mosts = re.findall(r'<i class="number">\d{1,10}</i>', text)
-    for i in mosts:
-        num = re.findall(r'\d{1,10}',i )
-        print num
-
-
-print rep(spaid()),most(spaid())
+url = "http://www."
